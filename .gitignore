@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Environment / Secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# MLflow Local Runtime Data
+mlflow.db
+mlruns/
+mlartifacts/
+
+# Logs
+*.log
+logs/
+airflow/logs/
+
+# Airflow Local Files
+airflow/airflow.db
+airflow/standalone_admin_password.txt
+airflow/__pycache__/
+
+# Python / Testing / Tool Caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated Kubernetes Output
+deployment-current.yaml
+
+# OS / IDE Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary Files
+*.tmp
+*.temp
+*.bak
+*.swp

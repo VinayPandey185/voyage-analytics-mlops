@@ -1,0 +1,15 @@
+﻿.venv
+__pycache__
+*.pyc
+.git
+.gitignore
+notebooks
+travel_capstone_dataset
+mlartifacts
+mlflow.db
+airflow
+kubernetes
+docker
+models/flight_price_pipeline.joblib
+streamlit_app.py
+requirements.txt

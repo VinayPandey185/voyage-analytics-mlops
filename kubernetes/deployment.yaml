@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travel-mlops-flask
+  labels:
+    app: travel-mlops-flask
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: travel-mlops-flask
+
+  template:
+    metadata:
+      labels:
+        app: travel-mlops-flask
+
+    spec:
+      containers:
+        - name: travel-mlops-flask
+          image: travel-mlops-flask:1.2
+
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 5001
+
+          env:
+            - name: MLFLOW_TRACKING_URI
+              value: "http://host.docker.internal:5000"
+
+            - name: MODEL_NAME
+              value: "Voyage_Flight_Price_Model"
+
+            - name: MODEL_ALIAS
+              value: "champion"
+
+            - name: FLASK_HOST
+              value: "0.0.0.0"
+
+            - name: FLASK_PORT
+              value: "5001"
+
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "1000m"
+              memory: "1Gi"
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5001
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5001
+            initialDelaySeconds: 30
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3

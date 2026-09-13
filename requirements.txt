@@ -1,0 +1,8 @@
+flask
+mlflow==3.15.1
+pandas
+numpy
+scikit-learn
+lightgbm
+joblib
+psutil==7.2.2
