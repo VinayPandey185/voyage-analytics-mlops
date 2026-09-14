@@ -296,6 +296,24 @@ Open:
 http://localhost:8501
 ```
 
+### 6. Start Airflow
+
+In another terminal:
+
+```powershell
+cd "C:\Users\VINAY\Desktop\Labmentix Projects\Travel_MLops_Major_Project"
+.\.venv\Scripts\Activate.ps
+
+docker compose -f .\airflow\docker-compose.yml up -d
+
+Then check: 
+
+docker compose -f .\airflow\docker-compose.yml ps
+
+Check whether port 8080 is responding: 
+
+Test-NetConnection 127.0.0.1 -Port 8080
+```
 ---
 
 ## 📸 Screenshots
@@ -407,6 +425,18 @@ The result is a practical end-to-end system that can be demonstrated from both t
 ## 👤 Author
 
 **Vinay Pandey**
+
+📧 Email
+
+vinaykumarpandey185@gmail.com
+
+🔗 LinkedIn
+
+https://www.linkedin.com/in/vinay-pandey-855579134/
+
+💻 GitHub
+
+https://github.com/VinayPandey185/voyage-analytics-mlops
 
 ---
 
